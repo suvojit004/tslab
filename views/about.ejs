@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', { description: 'Meet TS Lab, a value-added national distributor and technology solutions provider helping organizations across India grow securely.' }) %>
+<body>
+<%- include('partials/header') %>
+<main id="main">
+  <section class="page-hero">
+    <div class="wrap">
+      <a class="breadcrumb" href="/">Home /</a><span class="breadcrumb"> About us</span>
+      <div class="page-heading"><div><p class="eyebrow">ABOUT TS LAB</p><h1>Technology with purpose.<br><em>People behind it.</em></h1></div><p class="intro">We bring global security technologies and practical expertise together to help organizations across India protect what matters.</p></div>
+    </div>
+  </section>
+  <section class="wrap section about-story">
+    <div><p class="eyebrow">WHO WE ARE</p><h2>A technology portfolio.<br>A long-term partner.</h2></div>
+    <div><p>TS Lab Pvt Ltd is a value-added national distributor and technology solutions provider specializing in cybersecurity, data protection, endpoint management, network security and digital risk management.</p><p>Our role goes beyond supplying products. We help organizations choose the right solution, support its deployment and build the knowledge needed to use it effectively.</p><a class="text-link" href="/partners">Meet our technology partners ↗</a></div>
+  </section>
+  <section class="wrap mission-panel"><p class="eyebrow">OUR MISSION</p><h2>Empower organizations to safeguard digital assets, strengthen resilience and <em>grow securely.</em></h2><div class="mission-facts"><div><strong>11</strong><span>Global technology partners</span></div><div><strong>5</strong><span>Core security domains</span></div><div><strong>Pan-India</strong><span>Distribution & expertise</span></div></div></section>
+  <section class="wrap section"><div class="section-head"><div><p class="eyebrow">THE TS LAB APPROACH</p><h2>From the first conversation.<br>Through the next challenge.</h2></div></div><div class="approach-grid"><% [['01','Understand your needs','We start with your business challenges to recommend a suitable technology approach.'],['02','Put technology to work','Deployment support and technical assistance help turn the chosen solution into a working implementation.'],['03','Stay connected','Training and post-sales support help your team keep getting value from its technology.']].forEach(item => { %><article class="approach-card"><span class="eyebrow"><%= item[0] %> /</span><h3><%= item[1] %></h3><p><%= item[2] %></p></article><% }); %></div></section>
+  <section class="services section"><div class="wrap service-grid"><div><p class="eyebrow">ONE CONNECTED PORTFOLIO</p><h2>Protection across<br><em>your digital business.</em></h2><p>Bring complementary technologies together with guidance from one solutions partner.</p><a class="button" href="/solutions">Explore our solutions ↗</a></div><div><% ['Cybersecurity','Data protection','Endpoint management','Network security','Digital risk management'].forEach((domain,i) => { %><div class="service-row"><span>0<%= i+1 %></span><h3><%= domain %></h3><span>↗</span></div><% }); %></div></div></section>
+  <section class="wrap section closing-cta"><div><p class="eyebrow">LET’S MOVE FORWARD</p><h2>The right technology starts<br>with the right conversation.</h2></div><a class="button" href="/contact">Meet your technology partner ↗</a></section>
+</main>
+<%- include('partials/footer') %>
+</body></html>

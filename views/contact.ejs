@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', { description: 'Contact TS Lab for cybersecurity product enquiries, solution consulting, deployment assistance and partner conversations.' }) %>
+<body>
+<%- include('partials/header') %>
+<main id="main">
+  <section class="page-hero"><div class="wrap"><a class="breadcrumb" href="/">Home /</a><span class="breadcrumb"> Contact us</span><div class="page-heading"><div><p class="eyebrow">LET’S TALK</p><h1>Your next challenge.<br><em>Let’s solve it together.</em></h1></div><p class="intro">Looking for the right security solution or help with an existing deployment? Connect directly with the TS Lab team.</p></div></div></section>
+  <section class="wrap section contact-grid">
+    <div><p class="eyebrow">A CONVERSATION STARTS HERE</p><h2>Tell us what<br>you have in mind.</h2><p>Whether you’re exploring a product, planning an implementation or interested in working with us, we’ll help you find the next step.</p><div class="contact-block"><span class="eyebrow">CALL OUR TEAM</span><a href="tel:+919830090055">+91 98300 90055 ↗</a><a href="tel:+919874041041">+91 98740 41041 ↗</a></div><div class="contact-block"><span class="eyebrow">EMAIL US DIRECTLY</span><a href="mailto:rabindra@tslab.in">rabindra@tslab.in ↗</a><a href="mailto:schatterjee@tslab.in">schatterjee@tslab.in ↗</a></div></div>
+    <div class="enquiry-panel"><p class="eyebrow">HOW CAN WE HELP?</p><h3>Choose a conversation.</h3><p>Select a topic to open an email to our team.</p><% [['Product & solution enquiry','Explore products, licensing and the right fit for your needs.'],['Deployment & technical assistance','Discuss implementation, configuration or a technical question.'],['Training & post-sales support','Ask about enablement or support for your solution.'],['Partner enquiry','Start a conversation about working with TS Lab.']].forEach(item => { %><a class="enquiry-option" href="mailto:rabindra@tslab.in?subject=<%= encodeURIComponent(item[0]) %>"><div><h3><%= item[0] %></h3><p><%= item[1] %></p></div><span aria-hidden="true">↗</span></a><% }); %><p class="email-note">These links open your email app. You can also copy one of the email addresses on this page.</p></div>
+  </section>
+  <section class="portfolio section"><div class="wrap closing-cta"><div><p class="eyebrow">STILL EXPLORING?</p><h2>Get to know your options.</h2><p>Explore our 11-brand technology portfolio before we talk.</p></div><div class="actions"><a class="button" href="/#portfolio">Browse technologies ↗</a><a href="/downloads/ts-lab-portfolio.pdf" download>Download portfolio ↓</a></div></div></section>
+</main>
+<%- include('partials/footer') %>
+</body></html>

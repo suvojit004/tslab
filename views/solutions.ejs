@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', { description: 'Explore TS Lab solutions for data protection, endpoint security, device management, secure networking, Zero Trust access and cyber risk—with consulting and deployment support.' }) %>
+<body>
+<%- include('partials/header') %>
+<main id="main">
+  <section class="page-hero"><div class="wrap"><a class="breadcrumb" href="/">Home /</a><span class="breadcrumb"> Solutions</span><div class="page-heading"><div><p class="eyebrow">SECURITY THAT FITS YOUR BUSINESS</p><h1>Protect what matters.<br><em>Plan for what’s next.</em></h1></div><p class="intro">Bring your data, devices, networks and people into a connected security approach. TS Lab helps you choose suitable technologies and put them to work.</p></div></div></section>
+  <section class="wrap section"><div class="section-head"><div><p class="eyebrow">FIND YOUR STARTING POINT</p><h2>A dedicated approach.<br>For every security priority.</h2></div><p>Choose a solution to explore its capabilities, relevant technologies and the support available from TS Lab.</p></div><div class="solution-overview-grid"><% areas.forEach(area => { %><a class="solution-overview-card" href="/solutions/<%= area.id %>"><span class="eyebrow"><%= area.number %> / <%= area.label %></span><h3><%= area.title %></h3><p><%= area.intro %></p><span class="text-link">Explore this solution ↗</span></a><% }); %></div></section>
+<section class="portfolio section"><div class="wrap closing-cta"><div><p class="eyebrow">NOT SURE WHERE TO START?</p><h2>Let’s find your next step.</h2><p>Share your priorities and we’ll help you explore suitable options.</p></div><a class="button" href="/contact">Talk to our team ↗</a></div></section>
+</main><%- include('partials/footer') %>
+</body></html>

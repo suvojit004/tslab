@@ -1,0 +1,7 @@
+<nav id="navigation" aria-label="Main navigation">
+  <a href="/solutions" <% if (typeof activePage !== 'undefined' && activePage === 'solutions') { %>aria-current="page"<% } %>>Solutions</a>
+  <a href="/partners" <% if (typeof activePage !== 'undefined' && activePage === 'partners') { %>aria-current="page"<% } %>>Technology partners</a>
+  <a href="/#services">Services</a>
+  <a href="/about" <% if (typeof activePage !== 'undefined' && activePage === 'about') { %>aria-current="page"<% } %>>About us</a>
+  <a class="button" href="/contact" <% if (typeof activePage !== 'undefined' && activePage === 'contact') { %>aria-current="page"<% } %>>Contact us ↗</a>
+</nav>

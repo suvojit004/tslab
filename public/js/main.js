@@ -8,14 +8,37 @@ menu.addEventListener('click', () => {
 nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   menu.setAttribute('aria-expanded', 'false'); nav.classList.remove('open');
 }));
-function filterPartners(category) {
+const partnerToggle = document.querySelector('[data-partner-toggle]');
+const partnerCards = [...document.querySelectorAll('[data-category]')];
+let partnersExpanded = false;
+let partnerCategory = 'All partners';
+function renderPartners() {
   let count = 0;
-  document.querySelectorAll('[data-category]').forEach(card => {
-    card.hidden = category !== 'All partners' && card.dataset.category !== category;
+  partnerCards.forEach((card, index) => {
+    card.hidden = (partnerCategory !== 'All partners' && card.dataset.category !== partnerCategory)
+      || (partnerToggle && partnerCategory === 'All partners' && !partnersExpanded && index >= 6);
     if (!card.hidden) count++;
   });
-  document.querySelectorAll('[data-filter]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === category)));
-  document.querySelector('#result-count').textContent = `Showing ${count} partners`;
+  document.querySelectorAll('[data-filter]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === partnerCategory)));
+  const status = document.querySelector('#result-count');
+  if (status) status.textContent = partnerCategory === 'All partners' ? `Showing ${count} of ${partnerCards.length} partners` : `Showing ${count} partners`;
+  if (partnerToggle) {
+    partnerToggle.hidden = partnerCategory !== 'All partners' || partnerCards.length <= 6;
+    partnerToggle.setAttribute('aria-expanded', String(partnersExpanded));
+    partnerToggle.textContent = partnersExpanded ? 'Show fewer partners ↑' : `Show all ${partnerCards.length} partners ↓`;
+  }
+}
+function filterPartners(category) {
+  partnerCategory = category;
+  partnersExpanded = false;
+  renderPartners();
+}
+if (partnerToggle) {
+  partnerToggle.addEventListener('click', () => {
+    partnersExpanded = !partnersExpanded;
+    renderPartners();
+  });
+  renderPartners();
 }
 document.querySelectorAll('[data-filter]').forEach(b => b.addEventListener('click', () => filterPartners(b.dataset.filter)));
 document.querySelectorAll('[data-filter-link]').forEach(a => a.addEventListener('click', () => filterPartners(a.dataset.filterLink)));
